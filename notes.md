@@ -10,3 +10,6 @@ Includes:
 ## Lesson 56) Website HTML Template Part A
 Created static HTML mock-ups (external to this github repo) for index, about, blog and single templates.
 
+## Lesson 57) Website HTML Template Part B
+Styled the static mock-ups from Lesson 56.  Again, the mock-ups (and the styling) are external to this repo.
+
