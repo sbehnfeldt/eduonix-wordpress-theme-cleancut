@@ -13,3 +13,5 @@ Created static HTML mock-ups (external to this github repo) for index, about, bl
 ## Lesson 57) Website HTML Template Part B
 Styled the static mock-ups from Lesson 56.  Again, the mock-ups (and the styling) are external to this repo.
 
+## Lesson 58) Website HTML Template Part C
+Added CSS animations to static mock-ups.  Still, all work continues to be external to this repo.
