@@ -19,3 +19,6 @@ Added CSS animations to static mock-ups.  Still, all work continues to be extern
 
 ## Lesson 59) CleanCut Theme Setup & Menu
 Begin converting static HTML mock-ups to PHP.  
+
+## Lesson 60) Showcase & Social Customization
+Add customizations to the Customizer for the Showcase and the Social Media section

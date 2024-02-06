@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <style>
         .showcase {
-            height: 700px;
-            background: url('./img/showcase.jpg');
+            height: <?php echo get_theme_mod('showcase_height', 700 )?>px;
+            background: url(<?php echo get_theme_mod('showcase_image', get_bloginfo('template_url') . '/img/showcase.jpg') ?>)
         }
 
         .banner {

@@ -12,3 +12,5 @@ function cleancut_theme_support()
 
 add_action('after_setup_theme', 'cleancut_theme_support');
 
+// Add customizer Functionality
+require get_template_directory() . '/inc/customizer.php';

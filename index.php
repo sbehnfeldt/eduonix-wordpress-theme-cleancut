@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<?php get_template_part( 'partials/head' ); ?>♦
+<?php get_template_part( 'partials/head' ); ?>
 
 <body>
-<nav class="navbar navbar-default navbar-fixed-top" style="padding-top: 3rem;">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a>
+            </div>
+            <div id="navbar" class="navbar-collapse navbar-ex1-collapse">
+                <?php wp_nav_menu( [
+                    'theme_location' => 'primary',
+                    'depth'          => 2,
+                    'container'      => false,
+                    'menu_class'     => 'nav navbar-nav navbar-right',
+                    'fallback_cb'    => 'wp_bootstrap_navwalker::fallback',
+                    'walker'         => new wp_bootstrap_navwalker()
+                ] ); ?>
+            </div><!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse navbar-ex1-collapse">
-            <?php wp_nav_menu( [
-                'theme_location' => 'primary',
-                'depth'          => 2,
-                'container'      => false,
-                'menu_class'     => 'nav navbar-nav navbar-right',
-                'fallback_cb'    => 'wp_bootstrap_navwalker::fallback',
-                'walker'         => new wp_bootstrap_navwalker()
-            ] ); ?>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
-
+    </nav>
+</header>
 <section class="row showcase">
     <div class="container">
         <div class="col-md-12">
             <div class="showcase-content">
-                <h1>CleanCut Theme</h1>
-                <p class="lead">Custom Wordpress Them By You</p>
-                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i>Facebook</a>
-                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i>Twitter</a>
-                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i>LinkedIn</a>
+                <h1><?php echo get_theme_mod( 'showcase_heading', 'CleanCut Theme' ); ?></h1>
+                <p class="lead"><?php echo get_theme_mod( 'showcase_text', 'Custom WordPress Theme by You' ); ?></p>
+
+                <?php if ( get_theme_mod( 'facebook_url', 'https://facebook.com' ) != '' ) : ?>
+                    <a href="<?php echo get_theme_mod( 'facebook_url', 'https://facebook.com' ); ?>" target="_blank"
+                       class="btn btn-default btn-lg">
+                        <i class="fa fa-facebook fa-fw"></i>Facebook</a>
+                <?php endif; ?>
+
+                <?php if ( get_theme_mod( 'twitter_url', 'https://twitter.com' ) != '' ) : ?>
+                    <a href="<?php echo get_theme_mod( 'twitter_url', 'https://twitter.com' ); ?>" target="_blank"
+                       class="btn btn-default btn-lg">
+                        <i class="fa fa-twitter fa-fw"></i>Twitter</a>
+                <?php endif; ?>
+
+                <?php if ( get_theme_mod( 'linkedin_url', 'https://linkedin.com' ) != '' ) : ?>
+                    <a href="<?php echo get_theme_mod( 'linkedin_url', 'https://linkedin.com' ); ?>" target="_blank"
+                       class="btn btn-default btn-lg">
+                        <i class="fa fa-linkedin fa-fw"></i>LinkedIn</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -97,23 +113,6 @@
     </div>
 </section>
 
-<section class="banner">
-    <div class="container">
-        <div class="row col-lg-6">
-            <h2>Follow Us On Social Media:</h2>
-        </div>
-        <div class="col-lg-6">
-            <ul class="list-inline banner-social-buttons">
-                <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i><span
-                            class="network-name">Twitter</span></a></li>
-                <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i><span
-                            class="network-name">Github</span></a></li>
-                <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i><span
-                            class="network-name">LinkedIn</span></a></li>
-            </ul>
-        </div>
-    </div>
-</section>
 
 <?php get_template_part( 'partials/footer' ); ?>
 </body>
